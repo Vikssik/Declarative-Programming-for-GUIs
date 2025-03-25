@@ -5,8 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="300" Width="600">
+
+	<WrapPanel Orientation="Horizontal" Margin="70">
+
+		<Label Content="Label" VerticalAlignment="Top" />
+		<TextBox Text="TextBox" Height="25" Width="47" />
+		<TextBox Text="TextBox" Height="25" Width="47" />
+		<TextBox Text="TextBox" Height="25" Width="47" />
+		<TextBox Text="TextBox" Height="25" Width="47" />
+		<TextBox Text="TextBox" Height="25" Width="47" />
+		<TextBox Text="TextBox" Height="25" Width="47" />
+		<TextBox Text="TextBox" Height="25" Width="47" />
+		<TextBox Text="TextBox" Height="25" Width="47" />
+
+		<Label Content="Label" VerticalAlignment="Center"/>
+		<TextBox Text="TextBox" Height="25" Width="47" />
+		<TextBox Text="TextBox" Height="25" Width="47" />
+		<TextBox Text="TextBox" Height="25" Width="47" />
+		<TextBox Text="TextBox" Height="25" Width="47" />
+		<TextBox Text="TextBox" Height="25" Width="47" />
+		<TextBox Text="TextBox" Height="25" Width="47" />
+		<TextBox Text="TextBox" Height="25" Width="47" />
+		<TextBox Text="TextBox" Height="25" Width="47" />
+		
+			<Button Content="Button" Width="45"  HorizontalAlignment="Center"  Margin="170,30,0,0"  />
+
+		
+	</WrapPanel>
 </Window>
