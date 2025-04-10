@@ -15,14 +15,21 @@ using System.Windows.Shapes;
 
 namespace WpfApp1
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
+   
+        public partial class MainWindow : Window
         {
-            InitializeComponent();
+            public MainWindow()
+            {
+                InitializeComponent();
+            }
+
+            private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+            {
+                if (textBox1 != null)
+                {
+                    textBox1.FontSize = e.NewValue;
+                }
+            }
         }
-    }
 }
+

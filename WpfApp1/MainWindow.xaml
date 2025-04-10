@@ -7,39 +7,52 @@
         mc:Ignorable="d"
         Title="TextEditor" Height="350" Width="500">
 
-	<Grid>
+	<Window.Resources>
+		<Style TargetType="Button">
+			<Setter Property="Margin" Value="5"/>
+			<Setter Property="Background" Value="Transparent"/>
+			<Setter Property="BorderBrush" Value="White"/>
+		</Style>
+		<LinearGradientBrush x:Key="linearPanelBrush" StartPoint="0,0" EndPoint="1,0">
+			<GradientStop Color="Yellow" Offset="0"/>
+			<GradientStop Color="Aqua" Offset="0.5"/>
+			<GradientStop Color="#FFDADA1A" Offset="1"/>
+		</LinearGradientBrush>
+	</Window.Resources>
+	<Grid x:Name="grid1" Background="{StaticResource linearPanelBrush}">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="*"/>
+			<RowDefinition/>
 		</Grid.RowDefinitions>
-		<Border Grid.Row="0" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10">
-			<StackPanel Orientation="Horizontal">
-				<Button ToolTip="Відкрити">
+		<Border Grid.Row="0" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10" Margin="5">
+			<StackPanel Orientation="Horizontal" Name="stack1">
+				<Button Width="70" ToolTip="Відкрити..." Command="ApplicationCommands.Open">
 					<Image Source="C:\Users\kanav\source\repos\Declarative-Programming-for-GUIs\images\open.png" Width="40" Height="40"/>
 				</Button>
-				<Button ToolTip="Стерти">
+				<Button Width="70" ToolTip="Очистити" Command="ApplicationCommands.Delete">
 					<Image Source="C:\Users\kanav\source\repos\Declarative-Programming-for-GUIs\images\delete.png" Width="40" Height="40"/>
 				</Button>
-				<Button ToolTip="Копіювати">
+				<Button Width="70" ToolTip="Копіювати" Command="ApplicationCommands.Copy">
 					<Image Source="C:\Users\kanav\source\repos\Declarative-Programming-for-GUIs\images\copy.png" Width="40" Height="40"/>
 				</Button>
-				<Button ToolTip="Вставити">
+				<Button Width="70" ToolTip="Вставити" Command="ApplicationCommands.Paste">
 					<Image Source="C:\Users\kanav\source\repos\Declarative-Programming-for-GUIs\images\paste.png" Width="40" Height="40"/>
 				</Button>
 			</StackPanel>
 		</Border>
 		<Border Grid.Row="1" BorderBrush="#FFCBBEBE" BorderThickness="2" CornerRadius="10" Margin="5">
-			<Grid Margin="10">
+			<Grid Margin="10" Name="grid2">
 				<Grid.RowDefinitions>
-					<RowDefinition Height="*"/>
+					<RowDefinition/>
 					<RowDefinition Height="Auto"/>
 				</Grid.RowDefinitions>
-				<TextBox Grid.Row="0" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Margin="0,0,0,5"/>
-				<DockPanel Grid.Row="1" LastChildFill="False">
-					<Button Content="OK" DockPanel.Dock="Bottom" Width="50" HorizontalAlignment="Center"/>
-				</DockPanel>
+				<TextBox Name="textBox1" Grid.Row="0" AcceptsTab="True" Margin="0,0,0,5"
+                         TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible"
+                         AcceptsReturn="True"/>
+				<Button Grid.Row="1" Content="OK" Width="50" Height="25" HorizontalAlignment="Center"/>
 			</Grid>
 		</Border>
 	</Grid>
 </Window>
+
 
