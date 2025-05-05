@@ -8,97 +8,96 @@
         Title="Калькулятор" Height="500" Width="350" Background="#FFFAF0FF"
         FontFamily="Comic Sans MS" WindowStartupLocation="CenterScreen">
 
-	<Window.Resources>
-		<!-- Стиль для кнопок -->
-		<Style TargetType="Button">
-			<Setter Property="Margin" Value="5"/>
-			<Setter Property="FontSize" Value="20"/>
-			<Setter Property="FontWeight" Value="Bold"/>
-			<Setter Property="Background" Value="#FFCCDDFF"/>
-			<Setter Property="Foreground" Value="DarkBlue"/>
-			<Setter Property="Cursor" Value="Hand"/>
-			<Setter Property="BorderThickness" Value="2"/>
-			<Setter Property="BorderBrush" Value="#FF99AACC"/>
-			<Setter Property="Padding" Value="5"/>
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate TargetType="Button">
-						<Border Background="{TemplateBinding Background}"
-                                CornerRadius="10"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}">
-							<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-						</Border>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-			<Style.Triggers>
-				<Trigger Property="IsMouseOver" Value="True">
-					<Setter Property="Background" Value="#FFFFBBEE"/>
-					<Setter Property="Foreground" Value="DarkMagenta"/>
-				</Trigger>
-			</Style.Triggers>
-		</Style>
-	</Window.Resources>
+		<Window.Resources>
+			<!-- Стиль для кнопок -->
+			<Style TargetType="Button">
+				<Setter Property="Margin" Value="5"/>
+				<Setter Property="FontSize" Value="20"/>
+				<Setter Property="FontWeight" Value="Bold"/>
+				<Setter Property="Background" Value="#FFCCDDFF"/>
+				<Setter Property="Foreground" Value="DarkBlue"/>
+				<Setter Property="Cursor" Value="Hand"/>
+				<Setter Property="BorderThickness" Value="2"/>
+				<Setter Property="BorderBrush" Value="#FF99AACC"/>
+				<Setter Property="Padding" Value="5"/>
+				<Setter Property="Template">
+					<Setter.Value>
+						<ControlTemplate TargetType="Button">
+							<Border Background="{TemplateBinding Background}"
+									CornerRadius="10"
+									BorderBrush="{TemplateBinding BorderBrush}"
+									BorderThickness="{TemplateBinding BorderThickness}">
+								<ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+							</Border>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+				<Style.Triggers>
+					<Trigger Property="IsMouseOver" Value="True">
+						<Setter Property="Background" Value="#FFFFBBEE"/>
+						<Setter Property="Foreground" Value="DarkMagenta"/>
+					</Trigger>
+				</Style.Triggers>
+			</Style>
+		</Window.Resources>
 
-	<Grid Margin="10">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="*"/>
-		</Grid.RowDefinitions>
-
-		<!-- Екран -->
-		<Border Grid.Row="0" Background="#FFFFE6F0" CornerRadius="10" Margin="5"
-                Padding="5" BorderBrush="#FFCC66CC" BorderThickness="2" SnapsToDevicePixels="True">
-			<TextBox x:Name="Display"
-                     FontSize="36"
-                     IsReadOnly="True"
-                     TextAlignment="Right"
-                     Background="Transparent"
-                     BorderThickness="0"
-                     Foreground="DarkMagenta"
-                     VerticalContentAlignment="Center"
-                     />
-		</Border>
-
-		<!-- Кнопки -->
-		<Grid Grid.Row="1">
+		<Grid Margin="10">
 			<Grid.RowDefinitions>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
-				<RowDefinition Height="*"/>
+				<RowDefinition Height="Auto"/>
 				<RowDefinition Height="*"/>
 			</Grid.RowDefinitions>
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="*"/>
-				<ColumnDefinition Width="*"/>
-			</Grid.ColumnDefinitions>
 
-			<Button Content="7" Grid.Row="0" Grid.Column="0" Click="Number_Click"/>
-			<Button Content="8" Grid.Row="0" Grid.Column="1" Click="Number_Click"/>
-			<Button Content="9" Grid.Row="0" Grid.Column="2" Click="Number_Click"/>
-			<Button Content="/" Grid.Row="0" Grid.Column="3" Click="Operator_Click"/>
+			<!-- Екран -->
+			<Border Grid.Row="0" Background="#FFFFE6F0" CornerRadius="10" Margin="5"
+					Padding="5" BorderBrush="#FFCC66CC" BorderThickness="2" SnapsToDevicePixels="True">
+				<TextBox x:Name="Display"
+						 FontSize="36"
+						 IsReadOnly="True"
+						 TextAlignment="Right"
+						 Background="Transparent"
+						 BorderThickness="0"
+						 Foreground="DarkMagenta"
+						 VerticalContentAlignment="Center"/>
+			</Border>
 
-			<Button Content="4" Grid.Row="1" Grid.Column="0" Click="Number_Click"/>
-			<Button Content="5" Grid.Row="1" Grid.Column="1" Click="Number_Click"/>
-			<Button Content="6" Grid.Row="1" Grid.Column="2" Click="Number_Click"/>
-			<Button Content="*" Grid.Row="1" Grid.Column="3" Click="Operator_Click"/>
+			<!-- Кнопки -->
+			<Grid Grid.Row="1">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
 
-			<Button Content="1" Grid.Row="2" Grid.Column="0" Click="Number_Click"/>
-			<Button Content="2" Grid.Row="2" Grid.Column="1" Click="Number_Click"/>
-			<Button Content="3" Grid.Row="2" Grid.Column="2" Click="Number_Click"/>
-			<Button Content="-" Grid.Row="2" Grid.Column="3" Click="Operator_Click"/>
+				<Button Content="7" Grid.Row="0" Grid.Column="0" Click="Number_Click"/>
+				<Button Content="8" Grid.Row="0" Grid.Column="1" Click="Number_Click"/>
+				<Button Content="9" Grid.Row="0" Grid.Column="2" Click="Number_Click"/>
+				<Button Content="/" Grid.Row="0" Grid.Column="3" Click="Operator_Click"/>
 
-			<Button Content="0" Grid.Row="3" Grid.Column="0" Click="Number_Click"/>
-			<Button Content="." Grid.Row="3" Grid.Column="1" Click="Decimal_Click"/>
-			<Button Content="C" Grid.Row="3" Grid.Column="2" Click="Clear_Click"/>
-			<Button Content="+" Grid.Row="3" Grid.Column="3" Click="Operator_Click"/>
+				<Button Content="4" Grid.Row="1" Grid.Column="0" Click="Number_Click"/>
+				<Button Content="5" Grid.Row="1" Grid.Column="1" Click="Number_Click"/>
+				<Button Content="6" Grid.Row="1" Grid.Column="2" Click="Number_Click"/>
+				<Button Content="*" Grid.Row="1" Grid.Column="3" Click="Operator_Click"/>
 
-			<Button Content="=" Grid.Row="4" Grid.ColumnSpan="4" Click="Equal_Click" Background="#FFCC66CC" Foreground="White"/>
+				<Button Content="1" Grid.Row="2" Grid.Column="0" Click="Number_Click"/>
+				<Button Content="2" Grid.Row="2" Grid.Column="1" Click="Number_Click"/>
+				<Button Content="3" Grid.Row="2" Grid.Column="2" Click="Number_Click"/>
+				<Button Content="-" Grid.Row="2" Grid.Column="3" Click="Operator_Click"/>
+
+				<Button Content="0" Grid.Row="3" Grid.Column="0" Click="Number_Click"/>
+				<Button Content="." Grid.Row="3" Grid.Column="1" Click="Decimal_Click"/>
+				<Button Content="C" Grid.Row="3" Grid.Column="2" Click="Clear_Click"/>
+				<Button Content="+" Grid.Row="3" Grid.Column="3" Click="Operator_Click"/>
+
+				<Button Content="=" Grid.Row="4" Grid.ColumnSpan="4" Click="Equal_Click" Background="#FFCC66CC" Foreground="White"/>
+			</Grid>
 		</Grid>
-	</Grid>
-</Window>
+	</Window>
 
